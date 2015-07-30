@@ -14,6 +14,7 @@ public class Dialog : MonoBehaviour {
 	public DialogButton[] buttons;
 
 	GameEvent _currentEvent;
+	InteractiveObject _currentObject;
 	CanvasGroup canvasGroup;
 
 	public static Dialog instance;
@@ -44,9 +45,10 @@ public class Dialog : MonoBehaviour {
 		}
 
 		if (ParentObject != null) {
-			objectName.text = ParentObject.name;
-			CameraHandler.instance.targetObject = ParentObject;
+			_currentObject = ParentObject;
 		}
+		objectName.text = _currentObject.name;
+		CameraHandler.instance.targetObject = _currentObject;
 
 		dialogText.text = _currentEvent.description;
 
@@ -54,6 +56,7 @@ public class Dialog : MonoBehaviour {
 
 	}
 	public void Hide() {
+		Debug.Log ("Hiding");
 		parent.SetActive(false);
 		CameraHandler.instance.targetObject = null;
 		objectName.text = "";
@@ -70,11 +73,8 @@ public class Dialog : MonoBehaviour {
 	}
 
 	public void OnHitButton(int index) {
-
+		Hide();
 		_currentEvent.PerformAction(index);
-		if (index == _currentEvent.actions.Length)
-			Hide();
-
 	}
 
 }

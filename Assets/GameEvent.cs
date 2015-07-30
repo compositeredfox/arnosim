@@ -14,6 +14,7 @@ public class GameEvent : MonoBehaviour {
 	public void OnTriggered(InteractiveObject ByObject = null) {
 		if (triggerOnlyOnce && _triggered)
 			return;
+		Debug.Log ("showing " + this);
 		Dialog.instance.Show(this, ByObject);
 		_triggered = true;
 	}
@@ -30,16 +31,12 @@ public class GameEvent : MonoBehaviour {
 				return;
 			}
 			o.SetState(Action.targetState);
-
-			Dialog.instance.Hide ();
 		}
 	}
 	public void PerformAction(int Index) {
-		if (actions.Length > 0 && Index < actions.Length) {
+		if (actions.Length > 0 && Index < actions.Length)
 			PerformAction(actions[Index]);
-		} else {
-			Dialog.instance.Hide ();
-		}
+	
 	}
 }
 
