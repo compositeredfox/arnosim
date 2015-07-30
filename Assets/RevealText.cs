@@ -88,7 +88,12 @@ public class RevealText : MonoBehaviour {
 	char[] originalChars;
 	TextFormatRunBuilder runBuilder = new TextFormatRunBuilder();
 
+	public void SkipReveal() { skip = true; }
+
+	bool skip = false;
+
 	public IEnumerator DoRevealCoro2(string originalText, string prefix="", Action onComplete = null) {
+		skip = false;
 		if (prefix.Length > 0) {
 			if (!originalText.StartsWith(prefix))
 				Debug.LogError("does not start with prefix");
@@ -108,6 +113,7 @@ public class RevealText : MonoBehaviour {
 		do {
 			var now = Time.time;
 			finished = Mathf.Clamp01((now - startTime) / totalTime);
+			if (skip) finished = 1.0f;
 
 			var fadeStart = finished;
 
