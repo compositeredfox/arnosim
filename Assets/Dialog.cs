@@ -56,11 +56,9 @@ public class Dialog : MonoBehaviour {
 
 		parent.SetActive(true);
 
+		dialogText.text = "";
 		var reveal = dialogText.GetComponent<RevealText>();
-		if (reveal != null) {
-			dialogText.text = "";
-			reveal.Reveal2(_currentEvent.description, onComplete: () => StartCoroutine(RevealButtons()));
-		}
+		reveal.Reveal2(_currentEvent.description, onComplete: () => StartCoroutine(RevealButtons()));
 	}
 
 	IEnumerator RevealButtons() {
