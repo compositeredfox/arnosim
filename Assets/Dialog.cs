@@ -47,6 +47,7 @@ public class Dialog : MonoBehaviour {
 		}
 
 		ButtonsGroup.alpha = 0;
+		ButtonsGroup.interactable = false;
 
 		if (ParentObject != null) {
 			_currentObject = ParentObject;
@@ -64,6 +65,7 @@ public class Dialog : MonoBehaviour {
 	IEnumerator RevealButtons() {
 		yield return new WaitForSeconds(0.5f);
 		ButtonsGroup.alpha = 1.0f;
+		ButtonsGroup.interactable = true;
 	}
 
 	public void Hide() {
