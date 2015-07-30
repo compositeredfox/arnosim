@@ -29,6 +29,8 @@ public class Dialog : MonoBehaviour {
 		canvasGroup.alpha = iTween.FloatUpdate(canvasGroup.alpha, parent.activeSelf ? 1 : 0, 4);
 	}
 
+	CanvasGroup ButtonsGroup { get { return buttonsContainer.gameObject.GetComponent<CanvasGroup>(); } }
+
 	public void Show(GameEvent CurrentEvent, InteractiveObject ParentObject=null) {
 		/*while (buttonsContainer.childCount > 0) {
 			Destroy(buttonsContainer.GetChild(0).gameObject);
@@ -36,7 +38,7 @@ public class Dialog : MonoBehaviour {
 		_currentEvent = CurrentEvent;
 		foreach(DialogButton b in buttons) { b.gameObject.SetActive(false); }
 
-		if (CurrentEvent.actions.Length == 0)  {
+		if (_currentEvent.actions.Length == 0)  {
 			SetButton(buttons[0], "Continue my quest for the truth.");
 		} else {
 			for(int i=0;i<Mathf.Min(_currentEvent.actions.Length,buttons.Length);i++) {
@@ -44,17 +46,28 @@ public class Dialog : MonoBehaviour {
 			}
 		}
 
+		ButtonsGroup.alpha = 0;
+
 		if (ParentObject != null) {
 			_currentObject = ParentObject;
 		}
 		objectName.text = _currentObject.name;
 		CameraHandler.instance.targetObject = _currentObject;
 
-		dialogText.text = _currentEvent.description;
-
 		parent.SetActive(true);
 
+		var reveal = dialogText.GetComponent<RevealText>();
+		if (reveal != null) {
+			dialogText.text = "";
+			reveal.Reveal2(_currentEvent.description, onComplete: () => StartCoroutine(RevealButtons()));
+		}
 	}
+
+	IEnumerator RevealButtons() {
+		yield return new WaitForSeconds(0.5f);
+		ButtonsGroup.alpha = 1.0f;
+	}
+
 	public void Hide() {
 		//Debug.Log ("Hiding");
 		parent.SetActive(false);
