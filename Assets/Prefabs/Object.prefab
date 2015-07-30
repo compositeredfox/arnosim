@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: sdfds
-  state: 1
+  state: 0
   graphic_dirty: {fileID: 126270}
   graphic_done: {fileID: 111884}
   triggerEvent: {fileID: 11495898}
@@ -374,12 +374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerOnlyOnce: 0
   description: 
-  actions:
-  - label: ' '
-    actionType: 1
-    triggerEvent: {fileID: 0}
-    targetObject: {fileID: 0}
-    targetState: 2
+  actions: []
 --- !u!222 &22207114
 CanvasRenderer:
   m_ObjectHideFlags: 1

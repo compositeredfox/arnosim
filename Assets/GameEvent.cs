@@ -21,7 +21,8 @@ public class GameEvent : MonoBehaviour {
 
 	public void PerformAction(GameEventAction Action) {
 		if (Action.actionType == GameEventAction.ActionType.TriggerEvent) {
-			Action.triggerEvent.OnTriggered();
+			if (Action.triggerEvent)
+				Action.triggerEvent.OnTriggered();
 		} else if (Action.actionType == GameEventAction.ActionType.SetObjectState) {
 			InteractiveObject o = Action.targetObject;
 			if (o == null) {
