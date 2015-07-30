@@ -56,7 +56,7 @@ public class Dialog : MonoBehaviour {
 
 	}
 	public void Hide() {
-		Debug.Log ("Hiding");
+		//Debug.Log ("Hiding");
 		parent.SetActive(false);
 		CameraHandler.instance.targetObject = null;
 		objectName.text = "";

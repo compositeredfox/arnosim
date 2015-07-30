@@ -14,7 +14,7 @@ public class GameEvent : MonoBehaviour {
 	public void OnTriggered(InteractiveObject ByObject = null) {
 		if (triggerOnlyOnce && _triggered)
 			return;
-		Debug.Log ("showing " + this);
+		//Debug.Log ("showing " + this);
 		Dialog.instance.Show(this, ByObject);
 		_triggered = true;
 	}
