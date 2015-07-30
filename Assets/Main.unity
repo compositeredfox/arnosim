@@ -3672,15 +3672,15 @@ RectTransform:
   - {fileID: 12500016}
   - {fileID: 295565888}
   - {fileID: 1264289218}
-  - {fileID: 1812041459}
-  - {fileID: 252943700}
-  - {fileID: 704289512}
-  - {fileID: 1530501352}
   - {fileID: 1624580369}
   - {fileID: 100300176}
   - {fileID: 603252653}
-  - {fileID: 1693541583}
+  - {fileID: 1530501352}
   - {fileID: 1484258261}
+  - {fileID: 1812041459}
+  - {fileID: 252943700}
+  - {fileID: 704289512}
+  - {fileID: 1693541583}
   m_Father: {fileID: 1677197399}
   m_RootOrder: 4
   m_AnchorMin: {x: .5, y: .5}
@@ -5823,6 +5823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41944b7d29b7740deac29b4b76963b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lookAtBounds: {x: 392, y: 392, z: 392}
 --- !u!20 &1185313659
 Camera:
   m_ObjectHideFlags: 0
@@ -7349,11 +7350,6 @@ MonoBehaviour:
   triggerOnlyOnce: 0
   description: The past was nice
   actions: []
---- !u!224 &1530501352 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 22427980, guid: d7fc309eb609d43cc94feff7b57cc547,
-    type: 2}
-  m_PrefabInternal: {fileID: 1226898334}
 --- !u!1001 &1484258260
 Prefab:
   m_ObjectHideFlags: 0
@@ -7514,6 +7510,11 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22427980, guid: d7fc309eb609d43cc94feff7b57cc547,
     type: 2}
   m_PrefabInternal: {fileID: 1484258260}
+--- !u!224 &1530501352 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 22427980, guid: d7fc309eb609d43cc94feff7b57cc547,
+    type: 2}
+  m_PrefabInternal: {fileID: 1226898334}
 --- !u!1 &1565665494
 GameObject:
   m_ObjectHideFlags: 0
