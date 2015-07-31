@@ -53,7 +53,11 @@ public class Dialog : MonoBehaviour {
 		if (ParentObject != null) {
 			_currentObject = ParentObject;
 		}
-		objectName.text = _currentObject.name;
+		if (_currentObject != null) {
+			objectName.text = _currentObject.name;
+		} else {
+			objectName.text = "";
+		}
 		CameraHandler.instance.targetObject = _currentObject;
 
 		parent.SetActive(true);
