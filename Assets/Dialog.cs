@@ -93,7 +93,9 @@ public class Dialog : MonoBehaviour {
 
 	public void OnHitButton(int index) {
 		Hide();
-		_currentEvent.PerformAction(index);
+		if (!_currentEvent.PerformAction(index)) {
+			Game.instance.OnFinishedInteraction();
+		}
 	}
 
 }

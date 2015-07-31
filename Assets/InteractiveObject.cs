@@ -16,9 +16,11 @@ public class InteractiveObject : MonoBehaviour {
 
 	public GameEvent triggerEvent;
 	bool _interactable = true;
+	bool _interacted = false;
 
 	void Start() {
 		SetState(state);
+		Game.instance.RegisterObject(this);
 	}
 
 	public void SetState(ObjectState State) {
@@ -34,6 +36,10 @@ public class InteractiveObject : MonoBehaviour {
 		//Debug.Log ("click");
 		if (triggerEvent)
 			triggerEvent.OnTriggered(this);
+		if (!_interacted) {
+			_interacted = true;
+			Game.instance.OnFirstInteraction(this);
+		}
 		graphic_done.SetActive(triggerEvent._triggered);
 	}
 

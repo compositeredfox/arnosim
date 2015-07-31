@@ -19,24 +19,30 @@ public class GameEvent : MonoBehaviour {
 		_triggered = true;
 	}
 
-	public void PerformAction(GameEventAction Action) {
+	// returns if performed any action
+	public bool PerformAction(GameEventAction Action) {
 		if (Action.actionType == GameEventAction.ActionType.TriggerEvent) {
-			if (Action.triggerEvent)
+			if (Action.triggerEvent) {
 				Action.triggerEvent.OnTriggered();
+				return true;
+			}
 		} else if (Action.actionType == GameEventAction.ActionType.SetObjectState) {
 			InteractiveObject o = Action.targetObject;
 			if (o == null) {
 				o = transform.parent.parent.GetComponentInChildren<InteractiveObject>();
 			}
 			if (o == null) {
-				return;
+				return false;
 			}
 			o.SetState(Action.targetState);
+			return true;
 		}
+		return false;
 	}
-	public void PerformAction(int Index) {
+	public bool PerformAction(int Index) {
 		if (actions.Length > 0 && Index < actions.Length)
-			PerformAction(actions[Index]);
+			return PerformAction(actions[Index]);
+		return false;
 	
 	}
 }
