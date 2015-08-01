@@ -7,9 +7,8 @@ public class Game : MonoBehaviour {
 	public GameEvent endingEvent_normal;
 	public GameEvent endingEvent_future;
 	public GameObject endingObject;
+	public GameObject endButton;
 	public CanvasGroup endingCanvasGroup;
-
-	public AudioSource bgm;
 
 	public CanvasGroup decorCg;
 	public CanvasGroup objectsCg;
@@ -29,6 +28,7 @@ public class Game : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		endingObject.SetActive(false);
+		endButton.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -48,11 +48,16 @@ public class Game : MonoBehaviour {
 
 	public void OnFinishedInteraction() {
 
-		if (_objectsInteracted == objects.Count - 8 && !_showedEnding) {
-			StartCoroutine(Ending ());
+		if (_objectsInteracted == objects.Count - 10 && !_showedEnding) {
+			endButton.SetActive(true);
 		}
 
 
+	}
+
+	public void TriggerEnding() {
+		StartCoroutine(Ending ());
+		endButton.SetActive(false);
 	}
 
 	IEnumerator Ending() {
@@ -61,12 +66,12 @@ public class Game : MonoBehaviour {
 		endingCanvasGroup.alpha = 0;
 		endingObject.SetActive(true);
 
-		float bgmvol = bgm.volume;
+		float bgmvol = AudioListener.volume;
 		float t=0,duration=4;
 		while(t<duration) {
 			t += Time.deltaTime;
 			endingCanvasGroup.alpha = t/duration;
-			bgm.volume = Mathf.Lerp(bgmvol, 0, t/duration);
+			AudioListener.volume = Mathf.Lerp(bgmvol, 0, t/duration);
 			yield return 0;
 		}
 
@@ -106,7 +111,7 @@ public class Game : MonoBehaviour {
 		}
 
 		endingObject.SetActive(false);
-		bgm.volume = 1;
+		AudioListener.volume = 1;
 
 		decorCg.alpha = objectsCg.alpha = 1;
 

@@ -97,6 +97,7 @@ public class Dialog : MonoBehaviour {
 		Hide();
 		if (!_currentEvent.PerformAction(index)) {
 			Game.instance.OnFinishedInteraction();
+			_currentObject = null;
 		}
 	}
 

@@ -19,12 +19,12 @@ public class Intro : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		if (!Application.isEditor) {
+		//if (!Application.isEditor) {
 			StartCoroutine(IntroSequence ());
-		} else {
+		/*} else {
 			title.SetActive(false);
 			CameraHandler.instance.intro = 0;
-		}
+		}*/
 
 	}
 	IEnumerator IntroSequence() {
