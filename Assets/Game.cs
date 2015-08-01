@@ -23,6 +23,7 @@ public class Game : MonoBehaviour {
 	public static Game instance;
 	void Awake() {
 		instance = this;
+		_showedEnding = false;
 	}
 
 	// Use this for initialization
@@ -48,7 +49,7 @@ public class Game : MonoBehaviour {
 
 	public void OnFinishedInteraction() {
 
-		if (_objectsInteracted == objects.Count - 10 && !_showedEnding) {
+		if (_objectsInteracted >= 10 && !_showedEnding) {
 			endButton.SetActive(true);
 		}
 
