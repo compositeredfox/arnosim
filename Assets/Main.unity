@@ -297,7 +297,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 116356772}
-  m_RootOrder: 23
+  m_RootOrder: 19
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: -151, y: -359}
@@ -347,6 +347,61 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 35643634}
+--- !u!1 &43572333
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 43572335}
+  - 114: {fileID: 43572334}
+  m_Layer: 0
+  m_Name: Ending Future
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &43572334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 43572333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bafa5a896404cfeac9a335160293ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerOnlyOnce: 0
+  description: "^P^PAugust 1st,^P 2^P0^P3^P5^P^P^P\n\n\nIt's been 20 years since the
+    guys left the apartment. \nA few years after that, the vegan Speti you started
+    became a huge hit and a neighborhood institution. \nBut after a while, you grew
+    tired of fame and fortunes' inanity so you decided to retire to your own island
+    off the coast of Morocco, at a house with a big backyard where you grew your own
+    breed of tomatoes that you decide to brand \"Tomarnos\".\n\nOverrun by curiosity
+    you decide to go back to Sparrstr. 24 to see what fate brought about your old
+    abode.\nOn an odd twist of fate, you run into the guys as you approach the door,
+    as if a strange external force drew all of you back to this place."
+  actions:
+  - label: Enter the apartment
+    actionType: 0
+    triggerEvent: {fileID: 1069789549}
+    targetObject: {fileID: 0}
+    targetState: 0
+--- !u!4 &43572335
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 43572333}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1786078893}
+  m_RootOrder: 1
 --- !u!1 &74596155
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,14 +820,7 @@ RectTransform:
   - {fileID: 1266348180}
   - {fileID: 734518313}
   - {fileID: 142365386}
-  - {fileID: 1027634069}
-  - {fileID: 923123262}
-  - {fileID: 1014876124}
-  - {fileID: 901408281}
   - {fileID: 35643635}
-  - {fileID: 1888883658}
-  - {fileID: 1106687095}
-  - {fileID: 746534621}
   m_Father: {fileID: 1677197399}
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
@@ -2438,6 +2486,33 @@ MonoBehaviour:
     triggerEvent: {fileID: 2071569315}
     targetObject: {fileID: 0}
     targetState: 0
+--- !u!1 &372713436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 372713437}
+  m_Layer: 0
+  m_Name: _outro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &372713437
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 372713436}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 145.328079, y: -29.214674, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
 --- !u!224 &395184201 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22427980, guid: d7fc309eb609d43cc94feff7b57cc547,
@@ -4000,9 +4075,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endingEvent_normal: {fileID: 881426705}
+  endingEvent_future: {fileID: 43572334}
   endingObject: {fileID: 1975062122}
   endingCanvasGroup: {fileID: 1975062124}
   bgm: {fileID: 282252386}
+  decorCg: {fileID: 1358687806}
+  objectsCg: {fileID: 736141409}
 --- !u!4 &695290945
 Transform:
   m_ObjectHideFlags: 0
@@ -4662,6 +4740,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 736141408}
+  - 225: {fileID: 736141409}
   m_Layer: 8
   m_Name: Objects
   m_TagString: Untagged
@@ -4708,12 +4787,23 @@ RectTransform:
   - {fileID: 1374516145}
   - {fileID: 1843385570}
   m_Father: {fileID: 1677197399}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
+--- !u!225 &736141409
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 736141407}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &746534620
 GameObject:
   m_ObjectHideFlags: 0
@@ -4739,12 +4829,12 @@ RectTransform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 746534620}
-  m_LocalRotation: {x: 8.67560017e-12, y: 1.23648081e-09, z: .040459469, w: .999181211}
+  m_LocalRotation: {x: 0, y: 1.86264537e-09, z: .0404594727, w: .999181211}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 116356772}
-  m_RootOrder: 26
+  m_Father: {fileID: 1358687805}
+  m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 631.999878, y: 241}
@@ -5465,8 +5555,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerOnlyOnce: 0
-  description: Finished
-  actions: []
+  description: '^P^PAugust 1st, ^P2015^P^P^P
+
+
+    The guys are leaving tomorrow and they give you a silly game to play as a goodbye
+    present.
+
+    As you sit on the couch together you can''t help but wonder where life''s journey
+    will take everyone.^P^P
+
+    You''re overcome by feelings that you find hard to express. You do your best to
+    not let them show.^P^P^P
+
+    As the game ends you all look at each other and nod slowly, ^P^Pthe wind blows
+    the curtains dramatically ^P^Pand fireworks explode outside the window.^P^P^P^P
+
+    You have a feeling it won''t be the last time you sit here together.'
+  actions:
+  - label: Say goodbye
+    actionType: 0
+    triggerEvent: {fileID: 0}
+    targetObject: {fileID: 0}
+    targetState: 0
 --- !u!4 &881426706
 Transform:
   m_ObjectHideFlags: 0
@@ -5569,8 +5679,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 116356772}
-  m_RootOrder: 22
+  m_Father: {fileID: 1358687805}
+  m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 399, y: 165.649994}
@@ -5889,8 +5999,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 116356772}
-  m_RootOrder: 20
+  m_Father: {fileID: 1358687805}
+  m_RootOrder: 5
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 429, y: 349}
@@ -6095,19 +6205,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22450246, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 22450246, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -101.205276
       objectReference: {fileID: 0}
     - target: {fileID: 22450246, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 22450246, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 122.410553
       objectReference: {fileID: 0}
     - target: {fileID: 22450246, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_AnchorMin.x
@@ -6115,7 +6225,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22450246, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22450246, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_AnchorMax.x
@@ -6123,7 +6233,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22450246, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22450246, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_Pivot.x
@@ -6143,19 +6253,19 @@ Prefab:
       objectReference: {fileID: 1854674501}
     - target: {fileID: 22439926, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22439926, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22439926, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 22439926, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -61.2052765
       objectReference: {fileID: 0}
     - target: {fileID: 22439926, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_SizeDelta.x
@@ -6163,7 +6273,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22439926, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 98.410553
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
@@ -6340,8 +6450,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 116356772}
-  m_RootOrder: 21
+  m_Father: {fileID: 1358687805}
+  m_RootOrder: 4
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 569, y: 355}
@@ -6391,6 +6501,65 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1014876123}
+--- !u!1 &1017453848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1017453849}
+  - 114: {fileID: 1017453850}
+  m_Layer: 0
+  m_Name: 'Ending Future (end move in) '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1017453849
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1017453848}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1786078893}
+  m_RootOrder: 4
+--- !u!114 &1017453850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1017453848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bafa5a896404cfeac9a335160293ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerOnlyOnce: 0
+  description: 'You all move in together again and quickly get back into your old
+    rhythm. It''s just like the good old days.
+
+    You''re cooking pasta, watching movies and doing paperwork.
+
+    Fer still hasn''t learnt German.
+
+    A few days in, you go to take a shower and notice some little black hairs near
+    the drain.
+
+    You smile and a single tear runs down your face as you scrub it away. ^P^P^P
+
+    It''s good to be back.'
+  actions:
+  - label: The End
+    actionType: 0
+    triggerEvent: {fileID: 0}
+    targetObject: {fileID: 0}
+    targetState: 0
 --- !u!1001 &1022287125
 Prefab:
   m_ObjectHideFlags: 0
@@ -6592,8 +6761,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 116356772}
-  m_RootOrder: 19
+  m_Father: {fileID: 1358687805}
+  m_RootOrder: 6
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 265, y: 148}
@@ -6678,19 +6847,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22450246, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 156
       objectReference: {fileID: 0}
     - target: {fileID: 22450246, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -101.205276
       objectReference: {fileID: 0}
     - target: {fileID: 22450246, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 22450246, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 122.410553
       objectReference: {fileID: 0}
     - target: {fileID: 22450246, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_AnchorMin.x
@@ -6698,7 +6867,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22450246, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22450246, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_AnchorMax.x
@@ -6706,7 +6875,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22450246, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22450246, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_Pivot.x
@@ -6726,19 +6895,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22439926, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22439926, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22439926, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 22439926, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -61.2052765
       objectReference: {fileID: 0}
     - target: {fileID: 22439926, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_SizeDelta.x
@@ -6746,7 +6915,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22439926, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 98.410553
       objectReference: {fileID: 0}
     - target: {fileID: 124350, guid: a4e8f2a6ab6e746fbbd7c9b18891009f, type: 2}
       propertyPath: m_IsActive
@@ -6988,6 +7157,69 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22427980, guid: d7fc309eb609d43cc94feff7b57cc547,
     type: 2}
   m_PrefabInternal: {fileID: 1060463148}
+--- !u!1 &1069789548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1069789550}
+  - 114: {fileID: 1069789549}
+  m_Layer: 0
+  m_Name: Ending Future (apartment)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1069789549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1069789548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bafa5a896404cfeac9a335160293ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerOnlyOnce: 0
+  description: 'The apartment is empty.
+
+    Nobody could''ve expect the devastating effects of gentrification in Wedding.
+
+    Sparrstr became quickly overrun by quirky barbershops and dog grooming salons.
+
+    After the Coffee Crash of 2021, though, the neighborhood became deserted and apartments
+    were cheap again.
+
+    As you''re about to leave the landlord offers you the place for very cheap.
+
+    The guys look at you with a smile.'
+  actions:
+  - label: Flee back to Morocco
+    actionType: 0
+    triggerEvent: {fileID: 2138985831}
+    targetObject: {fileID: 0}
+    targetState: 0
+  - label: Move in together again
+    actionType: 0
+    triggerEvent: {fileID: 1017453850}
+    targetObject: {fileID: 0}
+    targetState: 0
+--- !u!4 &1069789550
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1069789548}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1786078893}
+  m_RootOrder: 2
 --- !u!1 &1080124615
 GameObject:
   m_ObjectHideFlags: 0
@@ -7097,8 +7329,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 116356772}
-  m_RootOrder: 25
+  m_Father: {fileID: 1358687805}
+  m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 570, y: 162}
@@ -8823,6 +9055,57 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22458508, guid: d7fc309eb609d43cc94feff7b57cc547,
     type: 2}
   m_PrefabInternal: {fileID: 1374516144}
+--- !u!1 &1358687804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1358687805}
+  - 225: {fileID: 1358687806}
+  m_Layer: 8
+  m_Name: Decor Objects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1358687805
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1358687804}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1888883658}
+  - {fileID: 1106687095}
+  - {fileID: 746534621}
+  - {fileID: 901408281}
+  - {fileID: 1014876124}
+  - {fileID: 923123262}
+  - {fileID: 1027634069}
+  m_Father: {fileID: 1677197399}
+  m_RootOrder: 4
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: .5, y: .5}
+--- !u!225 &1358687806
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1358687804}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1367289868
 GameObject:
   m_ObjectHideFlags: 0
@@ -11198,6 +11481,7 @@ RectTransform:
   - {fileID: 1040307880}
   - {fileID: 1006382631}
   - {fileID: 116356772}
+  - {fileID: 1358687805}
   - {fileID: 736141408}
   m_Father: {fileID: 192443649}
   m_RootOrder: 2
@@ -12432,6 +12716,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 881426706}
+  - {fileID: 43572335}
+  - {fileID: 1069789550}
+  - {fileID: 2138985830}
+  - {fileID: 1017453849}
   m_Father: {fileID: 695290945}
   m_RootOrder: 0
 --- !u!224 &1812041459 stripped
@@ -13097,8 +13385,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 116356772}
-  m_RootOrder: 24
+  m_Father: {fileID: 1358687805}
+  m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 277, y: 314.149994}
@@ -13935,6 +14223,58 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2099869994}
+--- !u!1 &2138985829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2138985830}
+  - 114: {fileID: 2138985831}
+  m_Layer: 0
+  m_Name: Ending Future (end morocco)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2138985830
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2138985829}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1786078893}
+  m_RootOrder: 3
+--- !u!114 &2138985831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2138985829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bafa5a896404cfeac9a335160293ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerOnlyOnce: 0
+  description: 'You return to your cozy home.
+
+    However, every now and then you wonder what could''ve been.
+
+    Life is good but you can''t shake the feeling that life with the guys was just
+    too good.'
+  actions:
+  - label: Fly to Berlin
+    actionType: 0
+    triggerEvent: {fileID: 1017453850}
+    targetObject: {fileID: 0}
+    targetState: 0
 --- !u!1 &2140953218
 GameObject:
   m_ObjectHideFlags: 0

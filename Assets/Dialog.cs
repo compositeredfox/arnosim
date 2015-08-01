@@ -13,6 +13,8 @@ public class Dialog : MonoBehaviour {
 
 	public DialogButton[] buttons;
 
+	public bool visible { get { return parent.activeSelf; } }
+
 	GameEvent _currentEvent;
 	InteractiveObject _currentObject;
 	CanvasGroup canvasGroup;
